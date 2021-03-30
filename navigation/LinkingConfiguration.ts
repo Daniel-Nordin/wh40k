@@ -6,6 +6,11 @@ export default {
     screens: {
       Root: {
         screens: {
+          Kabalite: {
+            screens:{
+              Kabalite: 'kabalite',
+            },
+          },
           TabOne: {
             screens: {
               TabOneScreen: 'one',

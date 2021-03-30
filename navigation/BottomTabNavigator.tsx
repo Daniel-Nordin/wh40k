@@ -7,7 +7,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import KabaliteScreen from '../screens/KabaliteScreen';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, KabaliteParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,11 +17,11 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Kabalite"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Kabalite"
+        component={KabaliteNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -55,6 +56,20 @@ function TabOneNavigator() {
         options={{ headerTitle: 'Tab One Title' }}
       />
     </TabOneStack.Navigator>
+  );
+}
+
+const KabaliteStack = createStackNavigator<KabaliteParamList>();
+
+function KabaliteNavigator() {
+  return (
+    <KabaliteStack.Navigator>
+      <KabaliteStack.Screen
+        name="KabaliteScreen"
+        component={KabaliteScreen}
+        options={{ headerTitle: 'Kabalite Title' }}
+      />
+    </KabaliteStack.Navigator>
   );
 }
 
