@@ -51,7 +51,13 @@ export default function WeaponTable({ t, s, sv, wl }) {
       }
     }
   }
-    list[index] = wl[index][0] + " Range: " + wl[index][1] + "\" Wound on: " + wound + "+ Save on: " + ;
+    var save
+    if (sv + wl[index][3] > 6){
+      save = "None";
+    }else{
+      save = (sv + wl[index][3]) + "+";
+    }
+    list[index] = wl[index][0] + ": Range: " + wl[index][1] + "\" Wound on: " + wound + "+ Save on: " + save + "\n" ;
 
   }
 
@@ -83,10 +89,11 @@ const styles = StyleSheet.create({
   },
   titles: {
     flex: 1,
-    backgroundColor: '#98AFC7',
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
   },
   titleText: {
+    color: '#000',
     fontWeight: 'bold',
   },
   stats: {

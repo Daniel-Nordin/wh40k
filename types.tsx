@@ -19,3 +19,7 @@ export type TabTwoParamList = {
 export type KabaliteparamList = {
   TabOneScreen: undefined;
 };
+
+export type ArchonparamList = {
+  TabOneScreen: undefined;
+};

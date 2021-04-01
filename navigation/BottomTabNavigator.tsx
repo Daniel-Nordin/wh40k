@@ -8,6 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import KabaliteScreen from '../screens/KabaliteScreen';
+import ArchonScreen from '../screens/ArchonScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, KabaliteParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -17,7 +18,7 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Kabalite"
+      initialRouteName="kabalite"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
         name="Kabalite"
@@ -27,8 +28,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Archon"
+        component={ArchonNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -70,6 +71,20 @@ function KabaliteNavigator() {
         options={{ headerTitle: 'Kabalite Title' }}
       />
     </KabaliteStack.Navigator>
+  );
+}
+
+const ArchonStack = createStackNavigator<ArchonParamList>();
+
+function ArchonNavigator() {
+  return (
+    <ArchonStack.Navigator>
+      <ArchonStack.Screen
+        name="ArchonScreen"
+        component={ArchonScreen}
+        options={{ headerTitle: 'Archon Title' }}
+      />
+    </ArchonStack.Navigator>
   );
 }
 

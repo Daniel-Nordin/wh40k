@@ -8,7 +8,12 @@ export default {
         screens: {
           Kabalite: {
             screens:{
-              Kabalite: 'kabalite',
+              KabaliteScreen: 'kabalite',
+            },
+          },
+          Archon: {
+            screens: {
+              ArchonScreen: 'archon',
             },
           },
           TabOne: {
